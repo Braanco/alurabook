@@ -1,0 +1,152 @@
+.cabecalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu2.svg");
+    background-repeat: no-repeat;/*para retirar imagem duplicada*/
+    background-position: center;
+    display: inline-block;
+}
+
+.container__botao:checked ~ .container__rotulo> .cabecalho__menu-hamburguer{
+    background-image: url("../img/Menu\ Aberto.svg");
+
+}
+.container__botao:checked ~ .container__rotulo{
+    background: var(--azul-degrade);
+}
+
+.cabeçalho{
+    background-color: var(--branco);
+    display: flex;/*o transformamos em um flex-container através da propriedade display: flex. Consequentemente, seus filhos (os elementos que estavam dentro dele) viraram flex-itens e por padrão eles ficaram alinhados em linha, ou seja, um ao lado do outro.*/
+    justify-content: space-between; /*e o justify-content define como o navegador irá distribuir o espaço entre os flex-itens.*/
+    align-items: center;/* A propriedade align-items especifica o alinhamento dos itens dentro de um flex-container*/ 
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem{
+    padding: 1em;
+    
+}
+
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 100%;/*Para deixar o menu para baixo do seu ícone vamos utilizar uma propriedade chamada top e o valor 100%, ou seja, o topo deste elemento deve estar 100% depois do cabeçalho.*/
+    width: 60vw;/*a propriedade de largura width deve conter a sua unidade de medida como vw que significa view width, ou seja, a largura da tela. Sendo assim, 60vw significa 60% da tela que está acessando a página.*/
+}
+
+.container__botao:checked ~.lista-menu{
+    display: block;
+}
+
+.lista-menu__titulo,.lista-menu__item{
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link{  
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;/*transforma o texto em letra maiuscula*/
+
+}
+
+.container__botao{
+    display: none;
+}
+.container__titulo{
+    display: none;
+}
+.opçoes{
+    display: none;
+}
+.container__texto{
+    display: none;
+}
+@media  screen and (min-width:1024px) {
+    .container__titulo,
+    .container__titulo__negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+    .container__titulo{
+        display: block;
+        font-weight: 400;
+    }
+    .container__titulo__negrito{
+        font-weight: 700;
+    }
+    .opçoes{
+        display: flex;
+    }
+    .opçoes__item{
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+    .opçoes__link{
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .container__imagem-transparente{
+        display: none;
+    }
+    .cabecalho__menu-hamburguer{
+        display: none;
+    }
+
+    .opçoes__botao:checked~.lista-menu{
+        display: block;
+        width: auto;
+
+    }
+
+    .opçoes__botao{
+        display: none;
+    }
+    .opçoes__botao:checked ~ .opçoes__rotulo > .opçoes__item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+    .opçoes__item{
+        padding: 2em 1em;
+    }
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+    .lista-menu__item:hover > .lista-menu__link{
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+    
+}
+
+@media screen and (min-width:1728px){
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .cabeçalho{
+        padding: 0 2em;
+
+    }
+    .opçoes{
+        margin-right: auto;
+    }
+    .container__texto{
+        display: block;
+    }
+}
