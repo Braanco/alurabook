@@ -1,6 +1,4 @@
-# AluraBook
-
-![AluraBook Logo](./img/logo-alura.png)
+# AluraBook  ![AluraBook Logo](./img/Logo.svg)
 
 ## 🚀 Sobre o Projeto
 
